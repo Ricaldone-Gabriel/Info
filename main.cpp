@@ -232,6 +232,31 @@ void es13()
 crociera stessa e del numero di persone che vi partecipano. Se la durata supera le due settimane e vi
 partecipano più di due persone lo sconto è del 15%. Altrimenti lo sconto è del 5%. Calcolare il prezzo
 della crociera tenendo conto di tutte le possibili condizioni di sconto.*/
+    int settimane, persone, costo;
+    const int sconto = 15, sconto1 = 5;
+    cout << "Quante persone ci sono?\n";
+    do
+    {
+        cin >> persone;
+    } while (persone < 0);
+    cout << "Per quante settimane?\n";
+    do
+    {
+        cin >> settimane;
+    } while (settimane < 0);
+    cout << "Quanto devi pagare?\n";
+    do
+    {
+        cin >> costo;
+    } while (costo < 0);
+    if (persone > 2 && settimane > 2)
+    {
+        cout << "Dovrai pagare: " << costo - (costo / 100) * sconto;
+    }
+    else
+    {
+        cout << "Dovrai pagare: " << costo - (costo / 100) * sconto1;
+    }
 }
 
 void es14()
@@ -243,6 +268,29 @@ Fornitore B: costo fisso annuale di 350 euro + tariffa unitaria di 0,10 euro per
 Progettare un'applicazione che, data la quantità di consegne che deve effettuare l'azienda, stampi il
 fornitore che applica le condizioni più convenienti e, in ogni caso il costo del fornitoreB. Determinare
 inoltre la quantità per cui la scelta dei fornitori è indifferente.*/
+    const int costofisso = 600, costofisso1 = 350;
+    const float tariffa = 0.10;
+    int pacchi;
+    cout << "Quanti pacchi devi consegnare?\n";
+    do
+    {
+        cin >> pacchi;
+    } while (pacchi < 0);
+
+    cout << "Costo fornitore A: " << costofisso << endl;
+    cout << "Costo fornitore B: " << pacchi * tariffa + costofisso1 << endl;
+    if (pacchi * tariffa + (costofisso - costofisso1) == costofisso)
+    {
+        cout << "Scelta dei fornitori è indifferente\n";
+    }
+    else if (pacchi * tariffa + (costofisso - costofisso1) < costofisso)
+    {
+        cout << "Ti conviene fornitore B\n";
+    }
+    else if (pacchi * tariffa + (costofisso - costofisso1) > costofisso)
+    {
+        cout << "Ti conviene fornitore A\n";
+    }
 }
 
 void es15()
@@ -262,47 +310,141 @@ Y e Z costanti.*/
 void es16()
 {
     //1. Inseriti N numeri, determinare quanti numeri sono positivi.
+    int num, cont = 0;
+    cout << "Quanti numeri?\n";
+    cin >> num;
+    for (int i = num; i > 0; i--)
+    {
+        cin >> num;
+        if (num > 0)
+        {
+            cont++;
+        }
+    }
+    cout << "Ci sono " << cont << " Numeri positivi\n";
 }
 
 void es17()
 {
     //2. Inseriti N numeri determinare quanti numeri sono pari e positivi.
+    int num, cont = 0;
+    cout << "Quanti numeri?\n";
+    cin >> num;
+    for (int i = num; i > 0; i--)
+    {
+        cin >> num;
+        if (num > 0 && num % 2 == 0)
+        {
+            cont++;
+        }
+    }
+    cout << "Ci sono " << cont << " Numeri positivi e pari\n";
 }
 
 void es18()
 {
     //3. Sommare N numeri dati in input e comunicare il risultato.
+    int num, somma = 0;
+    cout << "Quanti numeri?\n";
+    cin >> num;
+    for (int i = num; i > 0; i--)
+    {
+        cin >> num;
+        somma += num;
+    }
+    cout << "La somma e' " << somma << endl;
 }
 
 void es19()
 {
     //4. Moltiplicare N numeri dati in input e comunicare il risultato.
+    int num, prodotto = 1;
+    cout << "Quanti numeri?\n";
+    cin >> num;
+    for (int i = num; i > 0; i--)
+    {
+        cin >> num;
+        prodotto = prodotto * num;
+    }
+    cout << "Il prodotto e' " << prodotto << endl;
 }
 
 void es20()
 {
     /*5. Dati due numeri, calcolarne il prodotto utilizzando il solo operatore “+”. (senza usare quindi l’operatore
 *)*/
+    int num, num2, prodotto = 0;
+    cout << "Dammi i num\n";
+    cin >> num >> num2;
+    for (int i = num2; i > 0; i--)
+    {
+        prodotto += num;
+    }
+    cout << "il prodotto e' " << prodotto;
 }
 
 void es21()
 {
     //6. Calcolare e comunicare la media aritmetica di 10 numeri forniti in input.
+    int num, somma = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        cout << "Dammi un num\n";
+        cin >> num;
+        somma += num;
+    }
+    cout << "la media e' " << somma / 10;
 }
 
 void es22()
 {
     //7. Determinare e comunicare il massimo e il minimo di 10 numeri forniti in input.
+    int num, max = -20000, min = 20000;
+    for (int i = 0; i < 10; i++)
+    {
+        cout << "Dammi un num\n";
+        cin >> num;
+        if (num > max)
+        {
+            max = num;
+        }
+        if (num < min)
+        {
+            min = num;
+        }
+    }
+    cout << "Il massimo e' " << max << "\n il minimo e' " << min;
 }
 
 void es23()
 {
     //8. Determinare e comunicare la somma dei primi N numeri naturali.
+    int num, somma = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        cout << "Dammi un num\n";
+        cin >> num;
+        if (num > 0)
+        {
+            somma += num;
+        }
+    }
+    cout << "\nLa somma dei num naturali e': " << somma;
 }
 
 void es24()
 {
     //9. Calcolare la somma dei numeri inseriti da tastiera fintanto che si mantengono positivi.
+    int num, somma = 0;
+    do
+    {
+        cout << "Dammi un num\n";
+        cin >> num;
+        if (num > 0)
+        {
+            somma += num;
+        }
+    } while (num > 0);
 }
 
 void es25()
