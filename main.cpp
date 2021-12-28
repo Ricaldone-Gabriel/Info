@@ -147,8 +147,9 @@ Calcolare il rimborso, stampare il nome dello studente e l’ammontare del rimbo
 void es7()
 {
     //3. Dati tre numeri, visualizzarli in ordine crescente.
-    int num1, num2, num3;
+    int num1, num2, num3, scambio;
     cout << "Dammi dei num\n";
+    cin >> num1 >> num2 >> num3;
 }
 
 void es8()
