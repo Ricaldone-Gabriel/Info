@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <cmath>
+#include <algorithm>
 using namespace std;
 
 //**********************
@@ -147,9 +148,53 @@ Calcolare il rimborso, stampare il nome dello studente e l’ammontare del rimbo
 void es7()
 {
     //3. Dati tre numeri, visualizzarli in ordine crescente.
-    int num1, num2, num3, scambio;
-    cout << "Dammi dei num\n";
+    int num1, num2, num3, max, max1, ultimo;
+    cout << "Inserisci tre numeri interi.\n";
     cin >> num1 >> num2 >> num3;
+    max = num1;
+    if (num1 >= max)
+    {
+        max = num1;
+        if (num2 >= num3)
+        {
+            max1 = num2;
+            ultimo = num3;
+        }
+        else
+        {
+            max1 = num3;
+            ultimo = num2;
+        }
+    }
+    if (num2 >= max)
+    {
+        max = num2;
+        if (num1 >= num3)
+        {
+            max1 = num1;
+            ultimo = num3;
+        }
+        else
+        {
+            max1 = num3;
+            ultimo = num1;
+        }
+    }
+    if (num3 >= max)
+    {
+        max = num3;
+        if (num2 >= num1)
+        {
+            max1 = num2;
+            ultimo = num1;
+        }
+        else
+        {
+            max1 = num1;
+            ultimo = num2;
+        }
+    }
+    cout << ultimo << max1 << max;
 }
 
 void es8()
@@ -190,6 +235,10 @@ void es9()
     {
         cout << "il primo numero e' multiplo del secondo\n";
     }
+    else
+    {
+        cout << "Il primo numero non e' multiplo del secondo\n";
+    }
 }
 
 void es10()
@@ -198,6 +247,22 @@ void es10()
 divisibile” se si verifica questa eventualità, altrimenti produrre in output il quoziente della divisione dei
 due numeri.*/
     int divisore, dividendo;
+    cout << "Ciao! dammi il dividendo!\n";
+    cin >> dividendo;
+    cout << "Dammi il divisore\n";
+    cin >> divisore;
+    if (divisore == 0 && dividendo == 0)
+    {
+        cout << "Indefinito\n";
+    }
+    else if (divisore == 0)
+    {
+        cout << "Impossibile\n";
+    }
+    else
+    {
+        cout << dividendo / divisore;
+    }
 }
 
 void es11()
@@ -223,7 +288,30 @@ si produca in output il messaggio “rettangolo degenere”.*/
 
 void es12()
 {
-    //8. Date le misure dei lati di un triangolo, stabilire se è rettangolo.
+    float lato1, lato2, lato3, cateto1, cateto2, ipotenusa, teorema;
+    cout << "Inserisci i tre lati del triangolo.\n";
+    cin >> lato1 >> lato2 >> lato3;
+    ipotenusa = max(lato1, lato2, lato3);
+    if (ipotenusa == lato1)
+    {
+        cateto1 = lato2;
+        cateto2 = lato3;
+    }
+    if (ipotenusa == lato2)
+    {
+        cateto1 = lato1;
+        cateto2 = lato3;
+    }
+    if (ipotenusa == lato3)
+    {
+        cateto1 = lato1;
+        cateto2 = lato2;
+    }
+    teorema = sqrt(pow(cateto1, 2) + pow(cateto2, 2));
+    if (ipotenusa == teorema)
+        cout << "Il triangolo e' un triangolo rettangolo.\n";
+    else
+        cout << "Il triangolo e' un triangolo rettangolo.\n";
 }
 
 void es13()
@@ -301,6 +389,18 @@ fino a 500 Km il costo del biglietto è pari a X euro + Y euro per ogni Km perco
 oltre 500 Km il costo del biglietto è pari a Z euro (con Z minore di X) + Y euro per ogni Km percorso.
 Scrivere un algoritmo che, dato il numero di Km percorsi, stampi il prezzo del biglietto, supponendo X,
 Y e Z costanti.*/
+    const int X = 10, Y = 2, Z = 5;
+    int risposta;
+    cout << "Ciao! Quanti chilometri hai percorso?\n";
+    cin >> risposta;
+    if (risposta < 500)
+    {
+        cout << "Il biglietto costera': " << X + Y * risposta;
+    }
+    else
+    {
+        cout << "Il biglietto costera': " << Z + Y * risposta;
+    }
 }
 
 //********************
@@ -445,12 +545,25 @@ void es24()
             somma += num;
         }
     } while (num > 0);
+    cout << somma;
 }
 
 void es25()
 {
     /*10. Dato in input un valore limite intero positivo, determinare e comunicare quanti numeri naturali (a partire
 da 1) in sequenza, occorre sommare per raggiungere o eventualmente superare tale limite.*/
+    int risposta;
+    float sommare;
+    cout << "Dammi un numero limite\n";
+    do
+    {
+        cin >> risposta;
+    } while (risposta < 0);
+    for (int i = 1; i <= risposta; i++)
+    {
+        sommare = risposta / i;
+        cout << "Hai bisogno di " << ceil(sommare) << " (numero: " << i << ") per raggiungere il numero " << risposta << endl;
+    }
 }
 
 void es26()
@@ -458,17 +571,75 @@ void es26()
     /*11. Un numero primo è un numero maggiore di uno e divisibile solo per se stesso e per uno. Ad esempio 2, 3, 5,
 7, 11 sono numeri primi. Scrivere un programma che restituisce “PRIMO” se il numero fornito in input è
 primo, altrimenti restituisce “NON PRIMO”.*/
+    int risposta, cont = 0;
+    cout << "Dammi un numero\n";
+    cin >> risposta;
+    for (int i = 1; i < risposta; i++)
+    {
+        if (risposta % i == 0)
+        {
+            cont++;
+        }
+    }
+    if (cont == 2)
+    {
+        cout << "Il numero e' primo\n";
+    }
 }
 
 void es27()
 {
     /*12. Dati in input n numeri interi determinare la somma di quelli positivi e negativi e visualizzare quale
 somma risulta essere maggiore.*/
+    int risposta, sommaPos = 0, sommaNeg = 0;
+    cout << "Quante volte?\n";
+    cin >> risposta;
+    for (int i = risposta; i > 0; i--)
+    {
+        cout << "Dammi un num \n";
+        do
+        {
+            cin >> risposta;
+        } while (risposta == 0);
+        if (risposta < 0)
+        {
+            sommaNeg += risposta * -1;
+        }
+        else
+        {
+            sommaPos += risposta;
+        }
+    }
+    if (sommaPos > sommaNeg)
+    {
+        cout << "Numeri positivi più grandi\n";
+    }
+    else
+    {
+        cout << "Numeri negativi più grandi\n";
+    }
 }
 
 void es28()
 {
     //13. Determinare la somma dei numeri naturali dispari compresi fra due numeri a e b chiesti all’utente
+    int risposta1, risposta2, momentanea, somma = 0;
+    cout << "Dammi due numeri\n";
+    cin >> risposta1 >> risposta2;
+    if (risposta1 < risposta2)
+    {
+        momentanea = risposta1;
+        risposta1 = risposta2;
+        risposta2 = momentanea;
+    }
+    for (int i = risposta1; i > risposta2; i--)
+    {
+        if (i % 2 == 1)
+        {
+            somma += i;
+        }
+    }
+    cout << "La somma dei numeri dispari e': " << somma;
 }
 
 void es29()
