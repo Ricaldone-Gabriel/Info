@@ -5,10 +5,9 @@
 #include <algorithm>
 using namespace std;
 
-//**********************
+//*********************************************************************
 // STRUTTURA SEQUENZIALE
-//**********************
-
+//*********************************************************************
 void es1()
 {
     //1. Chiesti due numeri in input determinare la somma di due numeri.
@@ -17,7 +16,7 @@ void es1()
     cin >> num1 >> num2;
     cout << num1 + num2;
 }
-
+//-----------------------------------
 void es2()
 {
     //2. Chiesti tre numeri in input determinare la media di tre numeri.
@@ -26,7 +25,7 @@ void es2()
     cin >> num1 >> num2 >> num3;
     cout << (num1 + num2 + num3) / 3;
 }
-
+//-----------------------------------
 void es3()
 {
     //3. Dato in input il lato, trovare perimetro e area di un quadrato.
@@ -36,7 +35,7 @@ void es3()
     cout << lato * 4;
     cout << lato * lato;
 }
-
+//-----------------------------------
 void es4()
 {
     //4. Dati i due cateti calcolare la misura dell’ipotenusa di un triangolo rettangolo.
@@ -47,9 +46,9 @@ void es4()
     cout << sqrt(pow(cateto1, 2) + pow(cateto2, 2));
 }
 
-//**********************
+//*********************************************************************
 //STRUTTURA DI SELEZIONE
-//**********************
+//*********************************************************************
 
 void es5()
 {
@@ -70,7 +69,7 @@ void es5()
         cout << "\nSconto applicato: " << prezzo / 100 * sconto2;
     }
 }
-
+//-----------------------------------
 void es6()
 {
     /*2. La scuola rimborsa il 15% del costo dell’abbonamento se lo studente abita in provincia, usa l’autobus ed
@@ -144,7 +143,7 @@ Calcolare il rimborso, stampare il nome dello studente e l’ammontare del rimbo
         }
     }
 }
-
+//-----------------------------------
 void es7()
 {
     //3. Dati tre numeri, visualizzarli in ordine crescente.
@@ -196,7 +195,7 @@ void es7()
     }
     cout << ultimo << max1 << max;
 }
-
+//-----------------------------------
 void es8()
 {
     //4. Determinare se un numero intero positivo è pari.
@@ -224,7 +223,7 @@ void es8()
         cout << "neutro\n";
     }
 }
-
+//-----------------------------------
 void es9()
 {
     //5. Dati due numeri interi, stabilire se il primo è multiplo del secondo.
@@ -240,7 +239,7 @@ void es9()
         cout << "Il primo numero non e' multiplo del secondo\n";
     }
 }
-
+//-----------------------------------
 void es10()
 {
     /*6. Dati due numeri interi, stabilire se il primo è divisibile per il secondo. Produrre in output la stringa “non
@@ -264,7 +263,7 @@ due numeri.*/
         cout << dividendo / divisore;
     }
 }
-
+//-----------------------------------
 void es11()
 {
     /*7. Di un rettangolo è nota la base (valore costante pari a 5 cm), mentre l’altezza viene fornita in input. Se
@@ -285,7 +284,7 @@ si produca in output il messaggio “rettangolo degenere”.*/
         cout << "rettangolo degenere\n";
     }
 }
-
+//-----------------------------------
 void es12()
 {
     float lato1, lato2, lato3, cateto1, cateto2, ipotenusa, teorema;
@@ -313,7 +312,7 @@ void es12()
     else
         cout << "Il triangolo e' un triangolo rettangolo.\n";
 }
-
+//-----------------------------------
 void es13()
 {
     /*9. Un'agenzia di viaggi offre uno sconto sul prezzo di una crociera, che varia in funzione della durata della
@@ -346,7 +345,7 @@ della crociera tenendo conto di tutte le possibili condizioni di sconto.*/
         cout << "Dovrai pagare: " << costo - (costo / 100) * sconto1;
     }
 }
-
+//-----------------------------------
 void es14()
 {
     /*10. Un'azienda deve effettuare un certo numero di consegne di pacchi ai propri clienti. Può scegliere tra due
@@ -380,7 +379,7 @@ inoltre la quantità per cui la scelta dei fornitori è indifferente.*/
         cout << "Ti conviene fornitore A\n";
     }
 }
-
+//-----------------------------------
 void es15()
 {
     /*11. Una compagnia aerea privata applica due tipologie di biglietti, in relazione a due fasce chilometriche
@@ -403,10 +402,9 @@ Y e Z costanti.*/
     }
 }
 
-//********************
+//*********************************************************************
 // STRUTTURA ITERATIVA
-//********************
-
+//*********************************************************************
 void es16()
 {
     //1. Inseriti N numeri, determinare quanti numeri sono positivi.
@@ -423,7 +421,7 @@ void es16()
     }
     cout << "Ci sono " << cont << " Numeri positivi\n";
 }
-
+//-----------------------------------
 void es17()
 {
     //2. Inseriti N numeri determinare quanti numeri sono pari e positivi.
@@ -440,7 +438,7 @@ void es17()
     }
     cout << "Ci sono " << cont << " Numeri positivi e pari\n";
 }
-
+//-----------------------------------
 void es18()
 {
     //3. Sommare N numeri dati in input e comunicare il risultato.
@@ -454,7 +452,7 @@ void es18()
     }
     cout << "La somma e' " << somma << endl;
 }
-
+//-----------------------------------
 void es19()
 {
     //4. Moltiplicare N numeri dati in input e comunicare il risultato.
@@ -468,7 +466,7 @@ void es19()
     }
     cout << "Il prodotto e' " << prodotto << endl;
 }
-
+//-----------------------------------
 void es20()
 {
     /*5. Dati due numeri, calcolarne il prodotto utilizzando il solo operatore “+”. (senza usare quindi l’operatore
@@ -482,7 +480,7 @@ void es20()
     }
     cout << "il prodotto e' " << prodotto;
 }
-
+//-----------------------------------
 void es21()
 {
     //6. Calcolare e comunicare la media aritmetica di 10 numeri forniti in input.
@@ -495,7 +493,7 @@ void es21()
     }
     cout << "la media e' " << somma / 10;
 }
-
+//-----------------------------------
 void es22()
 {
     //7. Determinare e comunicare il massimo e il minimo di 10 numeri forniti in input.
@@ -515,7 +513,7 @@ void es22()
     }
     cout << "Il massimo e' " << max << "\n il minimo e' " << min;
 }
-
+//-----------------------------------
 void es23()
 {
     //8. Determinare e comunicare la somma dei primi N numeri naturali.
@@ -531,7 +529,7 @@ void es23()
     }
     cout << "\nLa somma dei num naturali e': " << somma;
 }
-
+//-----------------------------------
 void es24()
 {
     //9. Calcolare la somma dei numeri inseriti da tastiera fintanto che si mantengono positivi.
@@ -547,7 +545,7 @@ void es24()
     } while (num > 0);
     cout << somma;
 }
-
+//-----------------------------------
 void es25()
 {
     /*10. Dato in input un valore limite intero positivo, determinare e comunicare quanti numeri naturali (a partire
@@ -565,7 +563,7 @@ da 1) in sequenza, occorre sommare per raggiungere o eventualmente superare tale
         cout << "Hai bisogno di " << ceil(sommare) << " (numero: " << i << ") per raggiungere il numero " << risposta << endl;
     }
 }
-
+//-----------------------------------
 void es26()
 {
     /*11. Un numero primo è un numero maggiore di uno e divisibile solo per se stesso e per uno. Ad esempio 2, 3, 5,
@@ -586,7 +584,7 @@ primo, altrimenti restituisce “NON PRIMO”.*/
         cout << "Il numero e' primo\n";
     }
 }
-
+//-----------------------------------
 void es27()
 {
     /*12. Dati in input n numeri interi determinare la somma di quelli positivi e negativi e visualizzare quale
@@ -619,7 +617,7 @@ somma risulta essere maggiore.*/
         cout << "Numeri negativi più grandi\n";
     }
 }
-
+//-----------------------------------
 void es28()
 {
     //13. Determinare la somma dei numeri naturali dispari compresi fra due numeri a e b chiesti all’utente
@@ -641,7 +639,7 @@ void es28()
     }
     cout << "La somma dei numeri dispari e': " << somma;
 }
-
+//-----------------------------------
 void es29()
 {
     /*14. Leggere e addizionare una quantità non definita a priori di numeri interi fintantoché la somma si mantine
@@ -656,9 +654,9 @@ positiva; fornire in output il conteggio.*/
     cout << "La somma e': " << somma;
 }
 
-//*******************
+//*********************************************************************
 // ESERCIZI SUL LIBRO
-//*******************
+//*********************************************************************
 
 void es30()
 {
@@ -669,7 +667,7 @@ void es30()
     dado2 = rand() % 6 + 1;
     cout << dado1 << "\t" << dado2;
 }
-
+//-----------------------------------
 void es31()
 {
     //Scrivi un programma che genera N numeri random (N inserito dall'utente) e visualizza quanti numeri pari e quanti numeri dispari sono stati generati.
@@ -692,7 +690,7 @@ void es31()
     cout << "Numeri pari: " << par << endl;
     cout << "Numeri dispari: " << dis << endl;
 }
-
+//-----------------------------------
 void es32()
 {
     //Scrivi un programma che effettua la somma dei numeri inseriti dall'utente fino a raggiungere il numero 1000 e indica quanti numeri sono stati sommati.
@@ -706,7 +704,7 @@ void es32()
         somma += risposta;
     } while (somma < 1000);
 }
-
+//-----------------------------------
 void es33()
 {
     //Scrivi un programma che, leggendo due numeri, ne esegue la moltiplicazione mediante somme successive visualizzando sullo schermo il risultato di ogni iterazione.
@@ -721,24 +719,24 @@ void es33()
     }
     cout << "moltiplicazione e': " << somma;
 }
-
+//-----------------------------------
 void es34()
 {
     //Scrivi un programma che disegna sullo schermo 3 cornici quadrate concentriche costitute dal carattere "*" rispettivamente di lato 12,8, e 4.
 }
-
+//-----------------------------------
 void es35()
 {
     //Scrivi un programma che visualizzi i primi 100 numeri dispari a gruppi di 5
 }
-
+//-----------------------------------
 void es36()
 {
     //Scrivi un programma che legga da tastiera i dati di 4 prodotti, in particolare il codice,
     // il prezzo e la percentuale di sconto e visualizzi sullo schermo il prezzo scontato di ciscuno di essi. Successivamente si indichi sullo schermo il prezzo del prodotto più costoso,
     // il totale degli sconti effettuati, la media dei prezzi e la media degli sconti ipotizzando di avere venduto 100 unità di ogni prodotto.
 }
-
+//-----------------------------------
 void es37()
 {
     //Triangolari erano detti i numeri per i quali i punti assumevano la forma di un triangolo, come 1,3,6,10
@@ -746,7 +744,7 @@ void es37()
     //Inoltre i pitagorici dedussero che un numero quadrato poteva essere ottunuto anche dalla somma di due numeri triangolari successivi. Scrivi l'algoritmo che permette di visualizzare
     //la sequenza nei primi NUM numeri triangolari, dove NUM deve essere compreso tra 4 e 15 e la corrispondente sequenza dei numeri quadrati
 }
-
+//-----------------------------------
 //MAIN QUA SOTTO !
 
 //  .,.,/(((((//////////##%%%%%%%%%%%%%%%##//(#%%%%%%%%%%####(/*,*******,*,**(/,........................................................................
