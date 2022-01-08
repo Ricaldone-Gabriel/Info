@@ -723,17 +723,60 @@ void es33()
 void es34()
 {
     //Scrivi un programma che disegna sullo schermo 3 cornici quadrate concentriche costitute dal carattere "*" rispettivamente di lato 12,8, e 4.
+    int stella = 12, spazio = 10;
+    for (int i = 3; i > 0; i--)
+    {
+        for (int j = stella; j > 0; j--)
+        {
+            cout << "*";
+        }
+        cout << endl;
+        for (int j = spazio; j > 0; j--)
+        {
+            cout << "*";
+            for (int k = spazio; k > 0; k--)
+            {
+                cout << " ";
+            }
+            cout << "*\n";
+        }
+        for (int j = stella; j > 0; j--)
+        {
+            cout << "*";
+        }
+        stella -= 4;
+        spazio = stella - 2;
+        cout << endl
+             << endl
+             << endl;
+    }
 }
 //-----------------------------------
 void es35()
 {
     //Scrivi un programma che visualizzi i primi 100 numeri dispari a gruppi di 5
+    int cont = 0, cont2 = 0;
+    int numDispari[60]; //ho usato un array solo per ripassarlo, proverò a imparare i vettori in un secondo momento.
+    for (int i = 100; i > 0; i--)
+    {
+        if (i % 2 == 1)
+        {
+            numDispari[cont] = i;
+            cont++;
+        }
+    }
+    for (int i = cont / 5; i > 0; i--)
+    {
+        cout << numDispari[cont2] << "\t" << numDispari[cont2 + 1] << "\t" << numDispari[cont2 + 2] << "\t" << numDispari[cont2 + 3] << "\t" << numDispari[cont2 + 4] << endl;
+        cont2 += 5;
+    }
 }
 //-----------------------------------
 void es36()
 {
     //Scrivi un programma che legga da tastiera i dati di 4 prodotti, in particolare il codice,
-    // il prezzo e la percentuale di sconto e visualizzi sullo schermo il prezzo scontato di ciscuno di essi. Successivamente si indichi sullo schermo il prezzo del prodotto più costoso,
+    // il prezzo e la percentuale di sconto e visualizzi sullo schermo il prezzo scontato di ciscuno di essi.
+    //Successivamente si indichi sullo schermo il prezzo del prodotto più costoso,
     // il totale degli sconti effettuati, la media dei prezzi e la media degli sconti ipotizzando di avere venduto 100 unità di ogni prodotto.
 }
 //-----------------------------------
