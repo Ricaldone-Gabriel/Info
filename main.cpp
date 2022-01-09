@@ -778,6 +778,52 @@ void es36()
     // il prezzo e la percentuale di sconto e visualizzi sullo schermo il prezzo scontato di ciscuno di essi.
     //Successivamente si indichi sullo schermo il prezzo del prodotto più costoso,
     // il totale degli sconti effettuati, la media dei prezzi e la media degli sconti ipotizzando di avere venduto 100 unità di ogni prodotto.
+    float prodotto1[3];
+    float prodotto2[3];
+    float prodotto3[3];
+    float prodotto4[3];
+    float max = -1;
+    int prodottoCodice;
+    const int vendite = 100;
+    //Codice prodotto [0], Prezzo [1], sconto [2]
+    cout << "Dammi I dati del primo prodotto (Codice prodotto [1], Prezzo [2], sconto [3])\n";
+    cin >> prodotto1[0] >> prodotto1[1] >> prodotto1[2];
+    cout << "Dammi I dati del secondo prodotto (Codice prodotto [1], Prezzo [2], sconto [3])\n";
+    cin >> prodotto2[0] >> prodotto2[1] >> prodotto2[2];
+    cout << "Dammi I dati del terzo prodotto (Codice prodotto [1], Prezzo [2], sconto [3])\n";
+    cin >> prodotto3[0] >> prodotto3[1] >> prodotto3[2];
+    cout << "Dammi I dati del quarto prodotto (Codice prodotto [1], Prezzo [2], sconto [3])\n";
+    cin >> prodotto4[0] >> prodotto4[1] >> prodotto4[2];
+    max = prodotto1[1];
+    prodottoCodice = prodotto1[0];
+    if (max < prodotto2[1])
+    {
+        max = prodotto2[1];
+        prodottoCodice = prodotto2[0];
+    }
+    if (max < prodotto3[1])
+    {
+        max = prodotto3[1];
+        prodottoCodice = prodotto3[0];
+    }
+    if (max < prodotto4[1])
+    {
+        max = prodotto4[1];
+        prodottoCodice = prodotto4[0];
+    }
+    cout << "Prodotto piu' costoso: " << max << " Codice: " << prodottoCodice << endl;
+    cout << "Prezzo scontato dei prodotti:\n";
+    cout << "Prodotto 1\n "
+         << "\tPrezzo senza sconto: " << prodotto1[1] << " | Prezzo con sconto: " << prodotto1[1] - (prodotto1[1] / 100 * prodotto1[2]) << " | Sconto: " << prodotto1[2] << endl;
+    cout << "Prodotto 2\n "
+         << "\tPrezzo senza sconto: " << prodotto2[1] << " | Prezzo con sconto: " << prodotto2[1] - (prodotto2[1] / 100 * prodotto2[2]) << " | Sconto: " << prodotto2[2] << endl;
+    cout << "Prodotto 3\n "
+         << "\tPrezzo senza sconto: " << prodotto3[1] << " | Prezzo con sconto: " << prodotto3[1] - (prodotto3[1] / 100 * prodotto3[2]) << " | Sconto: " << prodotto3[2] << endl;
+    cout << "Prodotto 4\n "
+         << "\tPrezzo senza sconto: " << prodotto4[1] << " | Prezzo con sconto: " << prodotto4[1] - (prodotto4[1] / 100 * prodotto4[2]) << " | Sconto: " << prodotto4[2] << endl;
+    cout << "Media degli sconti: " << (prodotto1[2] * vendite + prodotto2[2] * vendite + prodotto3[2] * vendite + prodotto4[2] * vendite) / (vendite * 4) << "%\n";
+    cout << "Sconti effettuati: " << vendite * 4 << endl;
+    cout << "Media dei prezzi: " << (prodotto1[1] * vendite + prodotto2[1] * vendite + prodotto3[1] * vendite + prodotto4[1] * vendite) / (vendite * 4) << endl;
 }
 //-----------------------------------
 void es37()
@@ -786,6 +832,20 @@ void es37()
     //e quadrati erano detti tutti i numeri che si rappresentavno disponendo i punti in modo fa formare un quadrato, come 1,4,9,16 e così via.
     //Inoltre i pitagorici dedussero che un numero quadrato poteva essere ottunuto anche dalla somma di due numeri triangolari successivi. Scrivi l'algoritmo che permette di visualizzare
     //la sequenza nei primi NUM numeri triangolari, dove NUM deve essere compreso tra 4 e 15 e la corrispondente sequenza dei numeri quadrati
+    int risposta, numPrecedente = 0, triangolare = 1, cont = 1;
+    cout << "Quanti num triangolari vuoi?";
+    do
+    {
+        cin >> risposta;
+    } while (risposta < 3 || risposta > 16);
+    for (int i = 1; i <= risposta; i++)
+    {
+        cout << "Numero triangolare: " << triangolare << endl;
+        cout << "Numero quadrato corrispondente: " << numPrecedente + triangolare << endl;
+        numPrecedente = triangolare;
+        cont++;
+        triangolare += cont;
+    }
 }
 //-----------------------------------
 //MAIN QUA SOTTO !
