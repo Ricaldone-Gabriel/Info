@@ -32,7 +32,7 @@ void es3()
     int lato;
     cout << "Dammi il lato\n";
     cin >> lato;
-    cout << lato * 4;
+    cout << lato * 4 << endl;
     cout << lato * lato;
 }
 //-----------------------------------
@@ -84,7 +84,7 @@ Calcolare il rimborso, stampare il nome dello studente e l’ammontare del rimbo
     cin >> nome;
     cout << "Quanto costa l'abbonamento?\n";
     cin >> costo;
-    cout << "Abiti in provincia?";
+    cout << "Abiti in provincia?(1 == si | 0 == no)\n";
     do
     {
         cin >> risposta;
@@ -96,7 +96,7 @@ Calcolare il rimborso, stampare il nome dello studente e l’ammontare del rimbo
     }
     else
     {
-        cout << "Sei lontano almeno 20km?\n";
+        cout << "Sei lontano almeno 20km?(1 == si | 0 == no)\n";
         do
         {
             cin >> risposta;
@@ -108,14 +108,14 @@ Calcolare il rimborso, stampare il nome dello studente e l’ammontare del rimbo
         }
         else
         {
-            cout << "Usi L'autobus?\n";
+            cout << "Usi L'autobus?(1 == si | 0 == no)\n";
             do
             {
                 cin >> risposta;
             } while (risposta > 1 || risposta < 0);
             if (risposta == 0)
             {
-                cout << "Usi il treno?\n";
+                cout << "Usi il treno?(1 == si | 0 == no)\n";
                 do
                 {
                     cin >> risposta;
@@ -193,7 +193,7 @@ void es7()
             ultimo = num2;
         }
     }
-    cout << ultimo << max1 << max;
+    cout << ultimo << "\t" << max1 << "\t" << max;
 }
 //-----------------------------------
 void es8()
@@ -290,7 +290,8 @@ void es12()
     float lato1, lato2, lato3, cateto1, cateto2, ipotenusa, teorema;
     cout << "Inserisci i tre lati del triangolo.\n";
     cin >> lato1 >> lato2 >> lato3;
-    ipotenusa = max(lato1, lato2, lato3);
+    ipotenusa = max(lato1, lato2);
+    ipotenusa = max(ipotenusa, lato3);
     if (ipotenusa == lato1)
     {
         cateto1 = lato2;
@@ -310,7 +311,7 @@ void es12()
     if (ipotenusa == teorema)
         cout << "Il triangolo e' un triangolo rettangolo.\n";
     else
-        cout << "Il triangolo e' un triangolo rettangolo.\n";
+        cout << "Il triangolo non e' rettangolo.\n";
 }
 //-----------------------------------
 void es13()
